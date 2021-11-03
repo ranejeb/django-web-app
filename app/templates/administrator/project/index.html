@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Projects{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "/css/administrator/base.css" %}">
+{% endblock head %}
+{% block content %}
+<div class="page">
+  <div class="work">
+  <button type="button" class="home-btn" onclick="window.location.href = '{% url 'company-list' %}'">back</button>
+    <h3>Projects  of company {{ company.name }}</h3>
+        <button type="button" class="add-btn" onclick="window.location.href = '/project/{{ company.id }}/add/'">add project</button>
+      <table>
+          <tr>
+              <th>project name</th>
+          </tr>
+          {% for project in projects %}
+          <tr>
+              <td><a href="/project/{{ company.id }}/edit/{{ project.id }}/">{{ project.name }}</a></td>
+              <td><button type="button" onclick="window.location.href = '/project/{{ company.id }}/delete/{{ project.id }}/'">delete</button> </td>
+          </tr>
+          {% endfor %}
+      </table>
+  </div>
+</div>
+{% endblock content %}

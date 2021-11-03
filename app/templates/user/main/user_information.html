@@ -1,0 +1,8 @@
+{% load static %}
+<p align="center"><img width="50" height="50" src="{% static 'images/avatar.png' %}" alt="Avatar" class="avatar"></p>
+<p>First name: {{ user.first_name }}</p>
+<p>Last name: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Company: {{ user.department.company.name }}</p>
+<p>Department: {{ user.department.name }}</p>
+<p>Post: {{ user.post }}</p>

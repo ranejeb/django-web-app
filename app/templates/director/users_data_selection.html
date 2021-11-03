@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Users data{% endblock title %}
+{% block content %}
+  <h1>Users data</h1>
+  <table border="1" width="100%" cellpadding="5">
+     <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Worked time</th>
+      <th>Name project</th>
+      <th>Description</th>
+     </tr>
+    {% for user, tasks in array.items %}
+      {% for task in tasks %}
+        <tr>
+            <td>{{ user.first_name }} {{ user.last_name }}</td>
+            <td>{{ task.date }}</td>
+            <td>{{ task.time_worked }}</td>
+            <td>{{ task.project.name }}</td>
+            <td>{{ task.description }}</td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  </table>
+  <p></p>
+  <form action="{% url 'director-page' %}">
+    <button>Back</button>
+  </form>
+{% endblock content %}

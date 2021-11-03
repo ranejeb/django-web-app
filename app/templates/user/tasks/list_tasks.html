@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}The list tasks{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/tasks/base.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/user/tasks/placing_buttons_together.css' %}" type="text/css"/>
+{% endblock head %}
+{% block content %}
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <a href="#">
+                    <p>Project: {{ task.project.name }}</p>
+                    <p>Date: {{ task.date }}</p>
+                    <p>Description: {{ task.description }}</p>
+                    <p>Worked time: {{ task.time_worked }}</p>
+                    {% block optional_task %}{% endblock optional_task %}
+                </a>
+            </li>
+        {% endfor %}
+        {% block last_element %}{% endblock last_element %}
+    </ul>
+    <form action="{% url 'user-page' %}">
+        <button style="font-size: 15px;">Back</button>
+    </form>
+{% endblock content %}

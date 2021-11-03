@@ -1,0 +1,110 @@
+  html{
+  background-color: black;
+    color: red;
+  font-family: "Calibri Light";
+}
+
+  button{
+    background: blueviolet;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+    height: 80%;
+}
+
+  button.dep-btn {
+    width: 100%;
+  }
+
+  button.home-btn {
+    width: 10%;
+    height: 10%;
+    right: 45%;
+    top: 10px;
+    position: relative;
+  }
+  .avatar {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-color: rgb(10, 10, 10);
+    border-width: 3px;
+    border-style: groove;
+
+}
+  .user_page{
+    background: linear-gradient( rgba(221,3,228,0.5), rgba(86,17,236,0.5));
+    padding:10px ;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    color: white;
+    background-size: 40%;
+    width: 100%;
+    height: 20%;
+    margin: 5px;
+
+}
+  .exer1{
+    background: rgba(255, 255, 255, 0.26);
+    width: 100%;
+    height: 10%;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+  .work{
+    color:black;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    background: white;
+    width: 100%;
+    height: 90%;
+    margin: 5px;
+    padding: 10px;
+  }
+
+  input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+  }
+
+  a:link {
+      color: white;
+  }
+  a:visited {
+      color: white;
+  }
+  a:hover {
+      color: yellow;
+  }
+  a:active {
+      color: chocolate;
+  }
+
+  table a:link {
+      color: blue;
+  }
+
+  table a:visited {
+      color: blue;
+  }
+
+  table a:hover {
+      color: purple;
+  }
+
+  li.error {
+    color: red;
+  }

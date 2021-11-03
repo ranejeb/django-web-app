@@ -1,0 +1,23 @@
+{% extends "user/tasks/list_tasks.html" %}
+{% load static %}
+{% block title %}The list tasks for {{ date }}{% endblock title %}
+{% block optional_task %}
+    <p>&nbsp;</p>
+    <form action="{% url 'edit-task' task.id %}">
+        <button class="floated">Edit</button>
+    </form>
+    <form action="{% url 'delete-task' task.id %}">
+        <button class="floated">Delete</button>
+    </form>
+{% endblock optional_task %}
+{% block last_element %}
+    <li>
+        <a href="#">
+            <p>Add a task</p>
+            <p>&nbsp;</p>
+            <form action="{% url 'create-task' date.year date.month date.day %}">
+                <p align="center"><button style="border-radius: 50%;font-size: 24px">&nbsp;+&nbsp;</button></p>
+            </form>
+        </a>
+    </li>
+{% endblock last_element %}

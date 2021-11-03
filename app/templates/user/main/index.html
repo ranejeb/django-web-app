@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}User{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/main/base.css' %}" type="text/css"/>
+{% endblock head %}
+{% block content %}
+    <div class="page">
+        <div class="user_page">
+            <div class="header">
+                {% include 'user/main/user_information.html' %}
+            </div>
+            <div class="exer">
+                <p class="exer1"><a href="{% url 'change-data' %}">Edit your own data</a></p>
+                <p class="exer1"><a href="{% url 'change-password' %}">Change password</a></p>
+                <p class="exer1"><a href="{% url 'logout' %}">Log out</a></p>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="calendar1">
+                <h2>Calendar</h2>
+                {% include 'user/main/calendar.html' %}
+                <p></p>
+                <form action="{% url 'select-tasks' %}">
+                    <button>Selection</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

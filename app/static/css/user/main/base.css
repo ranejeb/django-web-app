@@ -1,0 +1,61 @@
+.page{
+    display: flex;
+    justify-content: space-between;
+
+}
+.avatar {
+    background-color: rgba(240, 248, 255, 0.25);
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 3px;
+    border-style: dashed;
+}
+.user_page{
+    background-color: rgba(55,61,226,0.53);
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-position: left;
+    background-size: 40%;
+    width: 30%;
+    height: 100%;
+    margin: 0px;
+}
+.calendar{
+    background-color: rgba(89, 105, 184, 0.38);
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    color: white;
+    background-position: center;
+    margin: 5px;
+    padding: 10px;
+    width: 70%;
+    height: 80%;
+    }
+body {
+    font-family: Arial;
+    background-color: black;
+}
+p.exer1{
+    background-color: rgba(149,144,156,0.38);
+    border-radius: 3px 3px 3px 3px;
+}
+a{
+    text-decoration: none;
+    color: cornsilk;
+    font-family: Arial;
+}
+.header{
+}
+.filter{
+    background-color: rgba(230,21,19,0.8);
+    text-align: center;
+    color: white;
+    margin: 5px;
+    width: 100%;
+    height: 20%;
+}

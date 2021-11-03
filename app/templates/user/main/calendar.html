@@ -1,0 +1,41 @@
+<form method="POST">
+  {% csrf_token %}
+  <select name="month">
+    {% for month in months %}
+      <option value="{{ month }}" {% if forloop.counter == current_month %}selected{% endif %}>{{ month }}</option>
+    {% endfor %}
+  </select>
+  <select name="year">
+    {% for year in years %}
+      <option value="{{ year }}" {% if year == current_year %}selected{% endif %}>{{ year }}</option>
+    {% endfor %}
+  </select>
+  <button>apply</button>
+</form>
+<p></p>
+<table align="center">
+  <tbody>
+    <tr>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    {% for week in weeks %}
+      <tr>
+      {% for day in week %}
+        <td>
+        {% if day is not None %}
+          <a href="{% url 'list-tasks' current_year current_month day.num %}">
+            <font color="{% if today.year == current_year and today.month == current_month and today.day == day.num %}gold{% elif not day.is_working_day %}red{% else %}white{% endif %}">{{ day.num }}</font>
+          </a>
+        {% endif %}
+        </td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

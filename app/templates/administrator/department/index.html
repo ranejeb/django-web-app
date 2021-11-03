@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Departments{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "/css/administrator/base.css" %}">
+{% endblock head %}
+{% block content %}
+<div class="page">
+  <div class="work">
+  <button type="button" class="home-btn" onclick="window.location.href = '{% url 'company-list' %}'">back</button>
+    <h3>Departments  of company {{ company.name }}</h3>
+        <button type="button" class="add-btn" onclick="window.location.href = '/department/{{ company.id }}/add/'">add department</button>
+      <table>
+          <tr>
+              <th>department name</th>
+          </tr>
+          {% for department in departments %}
+          <tr>
+              <td><a href="/department/{{ company.id }}/edit/{{ department.id }}/">{{ department.name }}</a></td>
+              <td><button type="button" onclick="window.location.href = '/department/{{ company.id }}/delete/{{ department.id }}/'">delete</button> </td>
+          </tr>
+          {% endfor %}
+      </table>
+  </div>
+</div>
+{% endblock content %}

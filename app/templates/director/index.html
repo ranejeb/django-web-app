@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Director{% endblock title %}
+{% block head %}
+  <link href="{% static 'css/director/base.css' %}" rel="stylesheet">
+  <link href="{% static 'css/director/blocks.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block content %}
+    <div id="content">
+      <div id="left">
+        {% include 'user/main/user_information.html' %}
+        <form action="{% url 'change-data' %}">
+            <button>Edit your own data</button>
+        </form>
+        <p></p>
+        <form action="{% url 'change-password' %}">
+            <button>Change password</button>
+        </form>
+        <p></p>
+        <form action="{% url 'logout' %}">
+            <button>Log out</button>
+        </form>
+      </div>
+      <div id="center">
+        <p>Список пользователей отдела</p>
+        <ul class="push">
+          {% for elem in users %}
+            <li><a href="{% url 'user-data' elem.id %}">{{ elem.first_name }} {{ elem.last_name }}</a></li>
+          {% endfor %}
+        </ul>
+        <form action="{% url 'users-data-selection' %}">
+          <button>Selection</button>
+        </form>
+      </div>
+    </div>
+  <div class="clear"></div>
+{% endblock content %}
